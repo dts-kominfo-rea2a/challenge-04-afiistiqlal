@@ -11,14 +11,13 @@ const dates = [
 const createDate = (arr, pos = 0) => {
   if (pos == 0) {
     let epoch = [];
-    // let epoch = '';
     for (let i = 0; i < arr.length; i++) {
       const date = new Date(arr[i]);
       epoch.push(Math.floor( date / 1000));
-      // epoch.concat(Math.floor(date/1000));
     }
     epoch.sort();
-    return epoch.join("-");
+    const result = epoch.join("-");
+    return result; 
   } else {
     const date = new Date(arr[pos]);
     const epoch = Math.floor( date / 1000);
