@@ -8,8 +8,8 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = (arr, pos = 0) => {
-  if (pos != 0) {
+const createDate = (arr, pos) => {
+  if (pos != undefined) {
     const date = new Date(arr[pos]);
     const epoch = Math.floor( date / 1000);
     
