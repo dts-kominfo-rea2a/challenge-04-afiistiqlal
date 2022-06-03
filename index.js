@@ -9,7 +9,12 @@ const dates = [
 
 // TODO: Buatlah fungsi createDate
 const createDate = (arr, pos = 0) => {
-  if (pos == 0) {
+  if (pos != 0) {
+    const date = new Date(arr[pos]);
+    const epoch = Math.floor( date / 1000);
+    
+    return epoch.toString();
+  } else {
     let epoch = [];
     for (let i = 0; i < arr.length; i++) {
       const date = new Date(arr[i]);
@@ -17,12 +22,7 @@ const createDate = (arr, pos = 0) => {
     }
     epoch.sort();
     const result = epoch.join("-");
-    return result; 
-  } else {
-    const date = new Date(arr[pos]);
-    const epoch = Math.floor( date / 1000);
-    
-    return epoch.toString();
+    return result.toString(); 
   }
 };
 
